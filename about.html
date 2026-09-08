@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About &amp; Contact — Varq</title>
+<meta name="description" content="Varq is a privacy-first document manager and on-device AI assistant. No account, no cloud, no compromise. Get in touch or read the Privacy Policy.">
+<style>
+/* ── Fonts (relative to web/ in the repo; graceful system-font fallback elsewhere) ── */
+@font-face { font-family:'Manrope'; src:url('assets/fonts/Manrope%5Bwght%5D.ttf') format('truetype-variations'); font-weight:200 800; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Medium.ttf') format('truetype'); font-weight:500; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-SemiBold.ttf') format('truetype'); font-weight:600; font-display:swap; }
+@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Bold.ttf') format('truetype'); font-weight:700; font-display:swap; }
+@font-face { font-family:'JetBrainsMono'; src:url('assets/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
+
+/* ── Page tokens — shared with docs/design-system.html ── */
+:root {
+  --bg:#F8F9FA; --surface:#FFFFFF; --surface-high:#F3F4F5; --surface-highest:#E7E8E9;
+  --ink:#1A1C1E; --muted:#44474A; --faint:#77797D; --hairline:#E0E0E0;
+  --accent:#1A1C1E; --on-accent:#FFFFFF; --gold-ink:#735C00; --teal:#1A9888;
+  --shadow-2:0 4px 20px rgba(0,0,0,.05);
+  --shadow-2h:0 6px 28px rgba(0,0,0,.08);
+  --font-display:'Manrope',-apple-system,'Segoe UI',system-ui,sans-serif;
+  --font-body:'Inter',-apple-system,'Segoe UI',Roboto,system-ui,sans-serif;
+  --font-mono:'JetBrainsMono',ui-monospace,'SF Mono','Cascadia Code',Menlo,monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
+    --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
+    --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
+    --shadow-2:0 4px 20px rgba(0,0,0,.45);
+    --shadow-2h:0 6px 28px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"] {
+  --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
+  --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
+  --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
+  --shadow-2:0 4px 20px rgba(0,0,0,.45);
+  --shadow-2h:0 6px 28px rgba(0,0,0,.55);
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:var(--font-body); font-size:15.5px; line-height:1.65;
+  background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;
+}
+a { color:var(--teal); text-decoration:none; }
+a:hover { text-decoration:underline; }
+:focus-visible { outline:2px solid var(--gold-ink); outline-offset:2px; border-radius:4px; }
+strong { color:var(--ink); }
+
+.wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+
+header.masthead { padding:48px 0 28px; border-bottom:1px solid var(--hairline); }
+.top-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.brand { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:.1px; }
+.brand-dot { width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 4px color-mix(in srgb, var(--teal) 16%, transparent); flex:none; }
+.top-nav { margin-left:auto; display:flex; align-items:center; gap:18px; font-size:13.5px; font-weight:600; }
+.top-nav a { color:var(--muted); }
+.top-nav a:hover { color:var(--ink); }
+.theme-toggle {
+  border:1px solid var(--hairline); background:var(--surface); color:var(--ink);
+  border-radius:9999px; padding:7px 14px; font:600 12px var(--font-body); letter-spacing:.02em;
+  cursor:pointer; box-shadow:var(--shadow-2);
+}
+.theme-toggle:hover { box-shadow:var(--shadow-2h); }
+
+h1 {
+  font-family:var(--font-display); font-weight:800; font-size:clamp(28px,5vw,38px);
+  letter-spacing:-.02em; line-height:1.15; margin-top:22px; text-wrap:balance;
+}
+.lede { color:var(--muted); font-size:16px; max-width:60ch; margin-top:12px; }
+.lede em { color:var(--ink); font-style:normal; font-weight:600; }
+
+.meta-chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:20px; }
+.meta-chip {
+  font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
+  border:1px solid var(--hairline); border-radius:9999px; padding:6px 13px; color:var(--muted);
+  background:var(--surface);
+}
+
+main { padding-bottom:8px; }
+section { padding:38px 0 0; }
+.eyebrow {
+  display:flex; align-items:center; gap:8px;
+  font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); }
+h2 { font-family:var(--font-display); font-weight:800; font-size:21px; letter-spacing:-.01em; margin:8px 0 12px; }
+section p { color:var(--ink); max-width:66ch; }
+section p + p { margin-top:12px; }
+section .note { color:var(--muted); font-size:13.5px; margin-top:12px; }
+
+.card { background:var(--surface); border:1px solid var(--hairline); border-radius:20px; box-shadow:var(--shadow-2); padding:22px 24px; }
+
+.feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:6px; }
+.feature-card { background:var(--surface); border:1px solid var(--hairline); border-radius:18px; padding:20px; box-shadow:var(--shadow-2); }
+.feature-card .ic {
+  width:32px; height:32px; border-radius:10px; background:var(--surface-high);
+  display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:10px;
+}
+.feature-card h3 { font-family:var(--font-display); font-weight:800; font-size:14.5px; margin-bottom:6px; }
+.feature-card p { color:var(--muted); font-size:13.5px; max-width:none; }
+
+.contact-card { display:flex; flex-wrap:wrap; align-items:center; gap:16px; justify-content:space-between; }
+.contact-btn {
+  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:var(--on-accent);
+  font-weight:700; font-size:14px; padding:11px 20px; border-radius:9999px; white-space:nowrap;
+}
+.contact-btn:hover { text-decoration:none; opacity:.92; }
+
+footer {
+  border-top:1px solid var(--hairline); margin-top:52px; padding:26px 0 56px;
+  font-size:13px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 22px;
+  justify-content:space-between; align-items:center;
+}
+footer a { font-weight:600; }
+
+@media print {
+  .theme-toggle { display:none; }
+  body { background:#fff; color:#000; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="top-row">
+      <div class="brand"><span class="brand-dot" aria-hidden="true"></span>Varq</div>
+      <nav class="top-nav">
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle page theme">◐ Theme</button>
+    </div>
+    <h1>About Varq</h1>
+    <p class="lede"><em>"Nothing leaves the page."</em> Varq is a privacy-first document manager and AI assistant that runs entirely on your device — no account, no cloud, no compromise.</p>
+    <div class="meta-chips">
+      <span class="meta-chip">Local-first</span>
+      <span class="meta-chip">On-device AI</span>
+      <span class="meta-chip">Encrypted vault</span>
+      <span class="meta-chip">Independently built</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="what-it-does">
+      <div class="eyebrow">What it does</div>
+      <h2>A document manager that keeps everything on your phone</h2>
+      <p>Varq brings together a secure vault, a full document toolkit, and a genuinely useful AI assistant — without asking you to hand your files to a server first.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="ic">🔒</div>
+          <h3>Encrypted Vault</h3>
+          <p>AES-256-GCM encryption for your most sensitive files, locked behind biometrics or a PIN.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">📄</div>
+          <h3>Full document toolkit</h3>
+          <p>View, edit, annotate, and convert PDFs, Word, PowerPoint, and Excel files — all on-device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🧠</div>
+          <h3>On-device AI</h3>
+          <p>Chat with your documents, get instant summaries, and search your library by meaning — powered by a language model that never leaves your phone.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🏷️</div>
+          <h3>Smart organization</h3>
+          <p>Automatic tagging, deadline &amp; obligation tracking, and connections between related documents — all found locally.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">✂️</div>
+          <h3>Smart Redact</h3>
+          <p>AI-assisted redaction that actually removes sensitive text, not just paints a black box over it.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🔍</div>
+          <h3>Semantic search</h3>
+          <p>Find what you mean, not just what you typed, across every document and note in your library.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-local-first">
+      <div class="eyebrow">Why local-first</div>
+      <h2>Your files never need to leave your phone</h2>
+      <p>Most document and AI apps ask you to upload your files to their servers to get anything smart done with them. Varq doesn't, because it doesn't have to — modern phones are powerful enough to run real AI on-device. That means your tax documents, medical records, and private notes stay on your device, whether or not you're online.</p>
+      <p class="note">Read the full <a href="privacy-policy.html">Privacy Policy</a> for exactly what data Varq touches and why.</p>
+    </section>
+
+    <section id="built-by">
+      <div class="eyebrow">Who's behind it</div>
+      <h2>Built independently</h2>
+      <p>Varq is designed and built by a solo developer, Rohit Tiwari. It started from a simple frustration: every "smart" document app wanted cloud access to files that never needed to leave the phone in the first place. Varq is the alternative.</p>
+    </section>
+
+    <section id="contact">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Contact</h2>
+      <div class="card contact-card">
+        <p style="max-width:44ch">Questions, feedback, bug reports, or press inquiries — all welcome.</p>
+        <a class="contact-btn" href="mailto:mindbridgeai1@gmail.com">✉ mindbridgeai1@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>About Varq · Last updated September 6, 2026</span>
+    <a href="privacy-policy.html">Privacy Policy →</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('mb-theme');
+    if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
+  } catch (e) {}
+  document.getElementById('themeToggle').addEventListener('click', function () {
+    var dark = root.dataset.theme ? root.dataset.theme === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('mb-theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
