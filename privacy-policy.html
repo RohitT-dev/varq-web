@@ -102,6 +102,7 @@ section { padding:38px 0 0; scroll-margin-top:20px; }
 }
 .eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); }
 h2 { font-family:var(--font-display); font-weight:800; font-size:21px; letter-spacing:-.01em; margin:8px 0 12px; }
+h3 { font-family:var(--font-display); font-weight:700; font-size:15.5px; margin:22px 0 6px; }
 section p, section li { color:var(--ink); }
 section p + p { margin-top:12px; }
 section .note { color:var(--muted); font-size:13.5px; margin-top:12px; }
@@ -140,6 +141,7 @@ footer a { font-weight:600; }
     <div class="top-row">
       <div class="brand"><span class="brand-dot" aria-hidden="true"></span>Varq</div>
       <nav class="top-nav">
+        <a href="terms.html">Terms of Use</a>
         <a href="about.html">About &amp; Contact</a>
       </nav>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle page theme">◐ Theme</button>
@@ -151,7 +153,7 @@ footer a { font-weight:600; }
       <span class="meta-chip">No cloud sync</span>
       <span class="meta-chip">On-device AI</span>
       <span class="meta-chip">AES-256 encrypted vault</span>
-      <span class="meta-chip">Effective Sept 6, 2026</span>
+      <span class="meta-chip">Effective Sept 24, 2026</span>
     </div>
   </header>
 
@@ -186,7 +188,9 @@ footer a { font-weight:600; }
       <div class="eyebrow"><span>02</span> What we don't collect</div>
       <h2>No account, no analytics, no tracking</h2>
       <p>Varq does not ask you to create an account, and does not collect, transmit, or store your documents, notes, vault contents, or AI chat history anywhere outside your device.</p>
-      <p>As of the effective date below, the app includes no analytics, advertising, or crash-reporting software of any kind — nothing tracks how you use the app, and no usage data is sent anywhere. If that ever changes, this policy will be updated first, and the change will be described in the app's release notes.</p>
+      <p>Varq contains no advertising software, no behavioural analytics, and no crash-reporting service. Nothing tracks which documents you open, what you write, what you ask the AI, or how you move around the app.</p>
+      <p>There is one narrow exception, described in full under "Third-party services" below: Google's on-device text-recognition library, bundled in the app, sends small, anonymous technical diagnostics to Google. That data never includes your documents, notes, chats, file names, or anything you type, and it is not linked to you.</p>
+      <p>If any of this changes, this policy will be updated first, and the change will be described in the app's release notes.</p>
     </section>
 
     <section id="how-data-is-stored">
@@ -194,13 +198,16 @@ footer a { font-weight:600; }
       <h2>How your data is stored</h2>
       <p>Everything you create or import in Varq — documents, notes, chat history, search index — is stored in a local database on your device. Anything you add to the Vault is additionally encrypted at rest with <strong>AES-256-GCM</strong>, a strong, industry-standard authenticated encryption method.</p>
       <p>The encryption key is generated on your device and held in your device's secure, hardware-backed storage — never in the cloud. We keep no copy of your encryption key and have no way to decrypt your Vault, even if we wanted to.</p>
+      <p>Details you choose to enter in your profile (such as your name and age) and the facts Varq's on-device AI remembers from your documents ("Memory Palace" and "Me") are stored the same way — locally, on your device only.</p>
     </section>
 
     <section id="on-device-ai">
       <div class="eyebrow"><span>04</span> Artificial intelligence</div>
       <h2>On-device AI</h2>
       <p>Varq's AI features — chat, document analysis, semantic search, smart tagging, insights — run on a language model (Gemma, via Google's LiteRT runtime) that is downloaded once and then executes entirely on your device.</p>
-      <p>When you ask the AI a question or open a document for analysis, none of that text, and none of the model's response, is sent to any server. The only network activity involved is the one-time download of the model files themselves (see "Third-party services" below) — after that, your device does the thinking, offline if you like.</p>
+      <p>When you ask the AI a question or open a document for analysis, none of that text, and none of the model's response, is sent to any server. The only network activity involved is the download of the model files themselves (see "Third-party services" below) — after that, your device does the thinking, offline if you like.</p>
+      <p>AI-generated answers can be wrong or incomplete. Varq shows where an answer came from in your own documents where it can, but you should check anything important against the original.</p>
+      <p>If an AI answer is offensive, harmful or wrong, you can report it from the answer itself. Varq opens your own email app with a message to us that contains the answer, the reason you picked, anything you add, and the app and model version. You can read and edit it first, and nothing is sent unless you press Send. Because the answer may quote your document, only send it if you are comfortable doing so.</p>
     </section>
 
     <section id="permissions">
@@ -210,11 +217,13 @@ footer a { font-weight:600; }
         <table>
           <thead><tr><th>Permission</th><th>Why Varq asks for it</th></tr></thead>
           <tbody>
-            <tr><td>Storage / Photos</td><td>To let you import documents and photos into your library, and save exported or converted files back to your device.</td></tr>
-            <tr><td>Camera</td><td>To scan physical documents and photos directly into the app.</td></tr>
-            <tr><td>Microphone</td><td>Only used if you choose voice input in AI chat. Audio is processed on-device and is never uploaded.</td></tr>
-            <tr><td>Biometric / Face ID</td><td>To unlock the app with your fingerprint or face instead of typing a PIN, if you turn on App Lock.</td></tr>
+            <tr><td>Files &amp; media (older Android versions)</td><td>On older Android versions, to let you import documents and photos into your library and save exported or converted files back to your device. On current versions Varq uses Android's own file and photo pickers instead, so it only ever sees the files you choose.</td></tr>
+            <tr><td>Camera</td><td>Only used when you choose Scan to PDF, to show a live viewfinder that finds the edges of the page and captures it. The camera view and the pictures it takes are processed on your device and are never uploaded. If you don't grant it, you can still scan from photos you already have.</td></tr>
+            <tr><td>Microphone</td><td>Only used when you choose to record: a voice message to the AI assistant, or a voice note. Audio is processed on your device and is never uploaded.</td></tr>
+            <tr><td>Biometric / fingerprint</td><td>To unlock the app with your fingerprint or face instead of typing a PIN, if you turn on App Lock. Varq only receives a pass/fail result from Android — never your fingerprint or face data.</td></tr>
             <tr><td>Notifications</td><td>To let you know when a background task — like indexing a large document, or a scheduled AI analysis — has finished.</td></tr>
+            <tr><td>Internet and network state</td><td>To download the on-device AI model files, and for the anonymous diagnostics described under "Third-party services". Never used to upload your content.</td></tr>
+            <tr><td>Background work (foreground service, keep-awake, start-on-boot)</td><td>So a long on-device task isn't stopped part-way: a background AI analysis of your documents (only if you turn it on, and only while charging) runs as a visible foreground service, the phone stays awake during a large model download, and scheduled analysis resumes after your phone restarts. This is processing on your own device, not syncing with any server.</td></tr>
           </tbody>
         </table>
       </div>
@@ -224,13 +233,18 @@ footer a { font-weight:600; }
     <section id="data-sharing">
       <div class="eyebrow"><span>06</span> Sharing</div>
       <h2>Data sharing</h2>
-      <p>We don't sell, rent, or share your data with third parties — we can't, because we never receive it. Varq contains no advertising software and no data-broker integrations.</p>
+      <p>We don't sell, rent, or share your documents, notes, chats, or personal information with anyone — we can't, because we never receive them. Varq contains no advertising software and no data-broker integrations.</p>
+      <p>The only information that leaves your device automatically is the anonymous technical diagnostics described under "Third-party services", which go to Google, and standard connection details that any download reveals to the server you download from.</p>
+      <p>If you tap Share or Export, you are choosing to send that file or text to an app and recipient you pick through Android's share sheet. That is your action, and Varq doesn't see where it goes.</p>
+      <p>The same is true when you report an AI answer or write to us: the message is sent by your own email app, and we receive only what is in that email, including your email address.</p>
     </section>
 
     <section id="retention-deletion">
       <div class="eyebrow"><span>07</span> Retention</div>
       <h2>Data retention &amp; deletion</h2>
-      <p>You control retention entirely: delete a document, note, or Vault item at any time from within the app, and it's gone from your device. Uninstalling Varq removes all of its local data along with it.</p>
+      <p>You control retention entirely: delete a document, note, or Vault item at any time from within the app, and it's gone from your device. Settings also includes a panic action that destroys the Vault's encryption key, making Vault files permanently unreadable. Uninstalling Varq removes all of its local data along with it.</p>
+      <p>The diagnostics described under "Third-party services" are anonymous and not tied to you or to any account, so there is nothing we can look up or delete on your behalf. Google keeps them under its own retention policy.</p>
+      <p>If you email us, including to report an AI answer, we keep that email only as long as we need it to deal with your message, and we delete it sooner if you ask.</p>
       <p>Your Vault and app-lock credentials are deliberately excluded from your device's automatic cloud backup, so they won't reappear if you restore a device backup onto a new phone. Because everything lives only on your device, we strongly recommend keeping your own backups of anything important to you — if a device is lost, damaged, or reset, we have no copy to recover it from.</p>
     </section>
 
@@ -238,26 +252,38 @@ footer a { font-weight:600; }
       <div class="eyebrow"><span>08</span> Security</div>
       <h2>Security measures</h2>
       <p>The Vault is encrypted with AES-256-GCM, an authenticated encryption standard that also protects against tampering, not just reading. App Lock uses biometric authentication and/or a PIN — your PIN is never stored in plain text; it's cryptographically hashed and salted (PBKDF2-SHA256) and protected against repeated guessing with an exponential lockout.</p>
-      <p>Sensitive screens are protected from screenshots and screen recording at the operating-system level. Varq also includes on-device checks that can detect signs of a compromised device — such as rooting, jailbreaking, or tampering — and will flag them to you.</p>
+      <p>Varq blocks screenshots and screen recording of the whole app at the operating-system level, and hides its content in the recent-apps view.</p>
+      <p>Varq does not detect whether your device is rooted or modified. On a compromised device, other software may be able to read what an app displays or stores, so keep your device's own security up to date.</p>
     </section>
 
     <section id="childrens-privacy">
       <div class="eyebrow"><span>09</span> Children</div>
       <h2>Children's privacy</h2>
-      <p>Varq is not directed at children under 13, and we do not knowingly collect personal information from children — in practice, since the app collects no personal information from anyone, this is true by construction. If you believe a child has used the app in a way that concerns you, contact us using the details below.</p>
+      <p>Varq is not directed at children under 13, and we do not knowingly collect personal information from children — in practice, since the app collects no personal information from anyone, this is true by construction. Any age you enter in your profile stays on your device. If you believe a child has used the app in a way that concerns you, contact us using the details below.</p>
     </section>
 
     <section id="your-rights">
       <div class="eyebrow"><span>10</span> Your rights</div>
       <h2>Your rights &amp; choices</h2>
-      <p>Many privacy laws (like the GDPR and CCPA) give you rights to access, correct, export, or delete your personal data. Because Varq never collects or stores your data anywhere but your own device, you already have complete, direct control over all of it — there's no request process, because there's no separate copy for us to act on. Opening the app and editing or deleting something <em>is</em> the whole process.</p>
+      <p>Many privacy laws (like the GDPR and CCPA) give you rights to access, correct, export, or delete your personal data. Because Varq never collects or stores your data anywhere but your own device, you already have complete, direct control over all of it — there's no request process, because there's no separate copy for us to act on. Opening the app and editing or deleting something <em>is</em> the whole process. The anonymous diagnostics in "Third-party services" aren't linked to you and can't be looked up by us, but if you have a question about them you can write to us below. If you have emailed us, you can ask us to delete that correspondence.</p>
+      <p>If you are in the European Economic Area, the United Kingdom, or a US state with a privacy law, you also have the right to complain to your local data-protection authority. The anonymous diagnostics are processed by Google to keep the app working, which is a legitimate interest, and may be transferred internationally under Google's own safeguards.</p>
     </section>
 
     <section id="third-parties">
       <div class="eyebrow"><span>11</span> Third parties</div>
       <h2>Third-party services</h2>
-      <p>Varq's only outbound network requests are to download its on-device AI model files, one time, from Google's and Hugging Face's official model hosting — after that download, the app's AI features run fully offline. Those providers may see standard connection information (such as your IP address) as part of serving that download, governed by their own privacy practices.</p>
-      <p>If you installed Varq from Google Play or another app store, that platform separately collects its own installation and purchase information under its own privacy policy — Varq has no visibility into, or control over, that.</p>
+      <p>Varq has no server of its own. The app talks to the network for exactly two reasons, listed here in full.</p>
+
+      <h3>1. Downloading the AI model files — Hugging Face</h3>
+      <p>The first time you use the AI features (and again if you switch model builds or a model file is missing), Varq downloads the model files from Hugging Face's public hosting at huggingface.co. These are plain file downloads: the request contains no information about you, your documents, or your questions. Hugging Face, like any web server, can see standard connection information such as your IP address, under <a href="https://huggingface.co/privacy" rel="noopener">its own privacy policy</a>. After the download, the AI features run offline.</p>
+
+      <h3>2. Text recognition — Google ML Kit</h3>
+      <p>When you scan a page or import an image, Varq reads the text with Google's ML Kit text-recognition library. The recognition models are built into the app and the image is processed entirely on your device — it is not sent to Google. Google states that the ML Kit SDK itself sends limited technical diagnostics to Google — device model and OS version, the app's package name and version, a per-installation identifier that is not intended to identify you or your device, performance figures (such as processing time) and error codes — over an encrypted connection, under <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">Google's ML Kit data disclosure</a>. It does not include the image or the text found in it.</p>
+
+      <h3>Google Play</h3>
+      <p>If you installed Varq from Google Play, Google separately collects installation, purchase and — if you have chosen to share diagnostic data with Google — crash and performance information (Android vitals) under its own privacy policy. Varq has no visibility into, or control over, that, and cannot see any of your content in it.</p>
+
+      <p class="note">We do not receive, store or have access to the diagnostics in (2); they go directly from the app to Google. We list them so nothing that leaves your device is a surprise.</p>
     </section>
 
     <section id="changes">
@@ -271,14 +297,14 @@ footer a { font-weight:600; }
       <h2>Contact us</h2>
       <div class="card contact-card">
         <p style="max-width:44ch">Questions about this policy, or about how Varq works? Reach out any time.</p>
-        <a class="contact-btn" href="mailto:mindbridgeai1@gmail.com">✉ mindbridgeai1@gmail.com</a>
+        <a class="contact-btn" href="mailto:varqlabai@gmail.com">✉ varqlabai@gmail.com</a>
       </div>
       <p class="note">Varq is developed independently by Rohit Tiwari.</p>
     </section>
   </main>
 
   <footer>
-    <span>Privacy Policy · Effective September 6, 2026</span>
+    <span>Privacy Policy · Effective September 24, 2026</span>
     <a href="about.html">About Varq →</a>
   </footer>
 </div>
