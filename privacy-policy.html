@@ -5,324 +5,259 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Varq</title>
 <meta name="description" content="How Varq handles your data: what it collects (almost nothing), where your data lives (only on your device), and what control you have over it (all of it).">
-<style>
-/* ── Fonts (relative to web/ in the repo; graceful system-font fallback elsewhere) ── */
-@font-face { font-family:'Manrope'; src:url('assets/fonts/Manrope%5Bwght%5D.ttf') format('truetype-variations'); font-weight:200 800; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Medium.ttf') format('truetype'); font-weight:500; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-SemiBold.ttf') format('truetype'); font-weight:600; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Bold.ttf') format('truetype'); font-weight:700; font-display:swap; }
-@font-face { font-family:'JetBrainsMono'; src:url('assets/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#edf1f6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#070e1b">
+<link rel="canonical" href="https://rohitt-dev.github.io/varq-web/privacy-policy.html">
 
-/* ── Page tokens — shared with docs/design-system.html ── */
-:root {
-  --bg:#F8F9FA; --surface:#FFFFFF; --surface-high:#F3F4F5; --surface-highest:#E7E8E9;
-  --ink:#1A1C1E; --muted:#44474A; --faint:#77797D; --hairline:#E0E0E0;
-  --accent:#1A1C1E; --on-accent:#FFFFFF; --gold-ink:#735C00; --teal:#1A9888;
-  --shadow-2:0 4px 20px rgba(0,0,0,.05);
-  --shadow-2h:0 6px 28px rgba(0,0,0,.08);
-  --font-display:'Manrope',-apple-system,'Segoe UI',system-ui,sans-serif;
-  --font-body:'Inter',-apple-system,'Segoe UI',Roboto,system-ui,sans-serif;
-  --font-mono:'JetBrainsMono',ui-monospace,'SF Mono','Cascadia Code',Menlo,monospace;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
-    --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
-    --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
-    --shadow-2:0 4px 20px rgba(0,0,0,.45);
-    --shadow-2h:0 6px 28px rgba(0,0,0,.55);
-  }
-}
-:root[data-theme="dark"] {
-  --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
-  --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
-  --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
-  --shadow-2:0 4px 20px rgba(0,0,0,.45);
-  --shadow-2h:0 6px 28px rgba(0,0,0,.55);
-}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Varq">
+<meta property="og:title" content="Privacy Policy — Varq">
+<meta property="og:description" content="How Varq handles your data: what it collects (almost nothing), where your data lives (only on your device), and what control you have over it (all of it).">
+<meta property="og:url" content="https://rohitt-dev.github.io/varq-web/privacy-policy.html">
+<meta property="og:image" content="https://rohitt-dev.github.io/varq-web/site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Varq: Nothing leaves the page.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Varq: Nothing leaves the page.">
 
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body {
-  font-family:var(--font-body); font-size:15.5px; line-height:1.65;
-  background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;
-}
-a { color:var(--teal); text-decoration:none; }
-a:hover { text-decoration:underline; }
-:focus-visible { outline:2px solid var(--gold-ink); outline-offset:2px; border-radius:4px; }
-strong { color:var(--ink); }
-
-.wrap { max-width:760px; margin:0 auto; padding:0 24px; }
-
-header.masthead { padding:48px 0 28px; border-bottom:1px solid var(--hairline); }
-.top-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-.brand { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:.1px; }
-.brand-dot { width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 4px color-mix(in srgb, var(--teal) 16%, transparent); flex:none; }
-.top-nav { margin-left:auto; display:flex; align-items:center; gap:18px; font-size:13.5px; font-weight:600; }
-.top-nav a { color:var(--muted); }
-.top-nav a:hover { color:var(--ink); }
-.theme-toggle {
-  border:1px solid var(--hairline); background:var(--surface); color:var(--ink);
-  border-radius:9999px; padding:7px 14px; font:600 12px var(--font-body); letter-spacing:.02em;
-  cursor:pointer; box-shadow:var(--shadow-2);
-}
-.theme-toggle:hover { box-shadow:var(--shadow-2h); }
-
-h1 {
-  font-family:var(--font-display); font-weight:800; font-size:clamp(28px,5vw,38px);
-  letter-spacing:-.02em; line-height:1.15; margin-top:22px; text-wrap:balance;
-}
-.lede { color:var(--muted); font-size:16px; max-width:60ch; margin-top:12px; }
-
-.meta-chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:20px; }
-.meta-chip {
-  font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
-  border:1px solid var(--hairline); border-radius:9999px; padding:6px 13px; color:var(--muted);
-  background:var(--surface);
-}
-
-nav.toc {
-  margin:28px 0 6px; padding:18px 20px; border:1px solid var(--hairline); border-radius:16px;
-  background:var(--surface);
-}
-nav.toc .toc-label { font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); margin-bottom:10px; }
-nav.toc ol { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:4px 18px; counter-reset:toc; }
-nav.toc li { counter-increment:toc; font-size:13.5px; }
-nav.toc li::before { content:counter(toc, decimal-leading-zero); font-family:var(--font-mono); font-size:11px; color:var(--faint); margin-right:8px; }
-nav.toc a { color:var(--ink); font-weight:500; }
-nav.toc a:hover { color:var(--teal); }
-
-main { padding-bottom:8px; }
-section { padding:38px 0 0; scroll-margin-top:20px; }
-.eyebrow {
-  display:flex; align-items:center; gap:8px;
-  font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
-}
-.eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); }
-h2 { font-family:var(--font-display); font-weight:800; font-size:21px; letter-spacing:-.01em; margin:8px 0 12px; }
-h3 { font-family:var(--font-display); font-weight:700; font-size:15.5px; margin:22px 0 6px; }
-section p, section li { color:var(--ink); }
-section p + p { margin-top:12px; }
-section .note { color:var(--muted); font-size:13.5px; margin-top:12px; }
-
-.card { background:var(--surface); border:1px solid var(--hairline); border-radius:20px; box-shadow:var(--shadow-2); padding:22px 24px; }
-
-.table-wrap { overflow-x:auto; border:1px solid var(--hairline); border-radius:14px; background:var(--surface); margin-top:4px; }
-table { border-collapse:collapse; width:100%; font-size:13.5px; }
-th, td { text-align:left; padding:12px 16px; border-top:1px solid var(--hairline); vertical-align:top; }
-thead th { border-top:none; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; background:var(--surface-high); }
-td:first-child { font-weight:600; white-space:nowrap; }
-
-.contact-card { display:flex; flex-wrap:wrap; align-items:center; gap:16px; justify-content:space-between; }
-.contact-btn {
-  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:var(--on-accent);
-  font-weight:700; font-size:14px; padding:11px 20px; border-radius:9999px; white-space:nowrap;
-}
-.contact-btn:hover { text-decoration:none; opacity:.92; }
-
-footer {
-  border-top:1px solid var(--hairline); margin-top:52px; padding:26px 0 56px;
-  font-size:13px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 22px;
-  justify-content:space-between; align-items:center;
-}
-footer a { font-weight:600; }
-
-@media print {
-  .theme-toggle, nav.toc { display:none; }
-  body { background:#fff; color:#000; }
-}
-</style>
+<link rel="icon" href="site/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="site/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="site/apple-touch-icon.png">
+<link rel="preload" href="site/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="site/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site/varq.css">
+<script>
+(function(d){d.classList.add("js");try{var t=localStorage.getItem("varq-theme")||localStorage.getItem("mb-theme");if(t==="light"||t==="dark"){d.dataset.theme=t;var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++){m[i].removeAttribute("media");m[i].setAttribute("content",t==="dark"?"#070e1b":"#edf1f6")}}}catch(e){}})(document.documentElement);
+</script>
 </head>
 <body>
-<div class="wrap">
-  <header class="masthead">
-    <div class="top-row">
-      <div class="brand"><span class="brand-dot" aria-hidden="true"></span>Varq</div>
-      <nav class="top-nav">
-        <a href="terms.html">Terms of Use</a>
-        <a href="about.html">About &amp; Contact</a>
-      </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle page theme">◐ Theme</button>
-    </div>
-    <h1>Privacy Policy</h1>
-    <p class="lede">Varq is built to work entirely on your device. This page explains, in plain language, what that means for your privacy — what we collect (almost nothing), where your data lives (only on your device), and what control you have over it (all of it).</p>
-    <div class="meta-chips">
-      <span class="meta-chip">No account required</span>
-      <span class="meta-chip">No cloud sync</span>
-      <span class="meta-chip">On-device AI</span>
-      <span class="meta-chip">AES-256 encrypted vault</span>
-      <span class="meta-chip">Effective Sept 24, 2026</span>
-    </div>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="0 0 572 770">
+    <path d="M95 31H365L539 205V677A62 62 0 0 1 477 739H95A62 62 0 0 1 33 677V93A62 62 0 0 1 95 31Z" fill="none" stroke="currentColor" stroke-width="32" stroke-linejoin="round"/>
+    <path d="M358 31 540 213H410Q358 213 358 163Z" fill="currentColor"/>
+    <path d="M85 275H180L298 500 415 275H500L450 330 305 620 300 690Z" fill="currentColor"/>
+    <path d="M500 275 300 690 305 620 450 330Z" fill="#17E1E9"/>
+  </symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="9" height="9" rx="2"/><path d="M4 12.5V5.5A1.5 1.5 0 0 1 5.5 4h7"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="frame">
+  <header class="bar">
+    <a class="brand" href="./" aria-label="Varq, home"><svg viewBox="0 0 572 770" aria-hidden="true" focusable="false"><use href="#mark"/></svg><span>Varq</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="privacy-policy.html" aria-current="page">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="./#contact" data-narrow="hide">Contact</a>
+      <button class="theme" id="themeToggle" type="button" aria-pressed="false" aria-label="Dark theme"><svg aria-hidden="true" focusable="false"><use href="#i-theme"/></svg></button>
+    </nav>
   </header>
 
-  <nav class="toc" aria-label="Table of contents">
-    <div class="toc-label">On this page</div>
-    <ol>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#what-we-dont-collect">What we don't collect</a></li>
-      <li><a href="#how-data-is-stored">How your data is stored</a></li>
-      <li><a href="#on-device-ai">On-device AI</a></li>
-      <li><a href="#permissions">Permissions we request</a></li>
-      <li><a href="#data-sharing">Data sharing</a></li>
-      <li><a href="#retention-deletion">Data retention &amp; deletion</a></li>
-      <li><a href="#security">Security measures</a></li>
-      <li><a href="#childrens-privacy">Children's privacy</a></li>
-      <li><a href="#your-rights">Your rights &amp; choices</a></li>
-      <li><a href="#third-parties">Third-party services</a></li>
-      <li><a href="#changes">Changes to this policy</a></li>
-      <li><a href="#contact">Contact us</a></li>
-    </ol>
-  </nav>
+  <div class="doc">
+    <nav class="rail" aria-label="Contents">
+      <details class="toc" open>
+        <summary>Contents<svg aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <ol role="list">
+          <li><a href="#overview"><i>1</i><span>Overview</span></a></li>
+          <li><a href="#what-we-dont-collect"><i>2</i><span>What we don't collect</span></a></li>
+          <li><a href="#how-data-is-stored"><i>3</i><span>How your data is stored</span></a></li>
+          <li><a href="#on-device-ai"><i>4</i><span>On-device AI</span></a></li>
+          <li><a href="#permissions"><i>5</i><span>Permissions we request</span></a></li>
+          <li><a href="#data-sharing"><i>6</i><span>Data sharing</span></a></li>
+          <li><a href="#retention-deletion"><i>7</i><span>Data retention &amp; deletion</span></a></li>
+          <li><a href="#security"><i>8</i><span>Security measures</span></a></li>
+          <li><a href="#childrens-privacy"><i>9</i><span>Children's privacy</span></a></li>
+          <li><a href="#your-rights"><i>10</i><span>Your rights &amp; choices</span></a></li>
+          <li><a href="#third-parties"><i>11</i><span>Third-party services</span></a></li>
+          <li><a href="#changes"><i>12</i><span>Changes to this policy</span></a></li>
+          <li><a href="#contact"><i>13</i><span>Contact us</span></a></li>
+        </ol>
+      </details>
+      <script>if(!matchMedia("(min-width:1160px)").matches)document.currentScript.previousElementSibling.removeAttribute("open")</script>
+    </nav>
 
-  <main>
-    <section id="overview">
-      <div class="eyebrow"><span>01</span> Overview</div>
+    <main id="main">
+      <article class="sheet paper" data-reading>
+        <span class="edge" aria-hidden="true"></span>
+        <header class="paper__head">
+          <h1>Privacy Policy</h1>
+          <p class="paper__lede">Varq is built to work entirely on your device. This page explains, in plain language, what that means for your privacy — what we collect (almost nothing), where your data lives (only on your device), and what control you have over it (all of it).</p>
+          <p class="paper__date">Effective <time datetime="2026-09-24">September 24, 2026</time></p>
+          <ul class="assurances" role="list">
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>No account required</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>No cloud sync</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>On-device AI</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>AES-256 encrypted vault</span></li>
+          </ul>
+        </header>
+
+    <section class="clause" id="overview">
+      <span class="clause__no" aria-hidden="true">1</span>
+      <div class="clause__body">
       <h2>What Varq is, and isn't</h2>
       <p>Varq — <em>"Nothing leaves the page"</em> — is a local-first document manager. Your files, notes, vault contents, and AI conversations are stored on your device and processed by an AI model that also runs on your device. We don't operate a server that stores, or even sees, your content, because there isn't one.</p>
       <p>This policy covers the limited information the app does touch, the permissions it asks for and why, and how you stay in control of your data.</p>
+      </div>
     </section>
 
-    <section id="what-we-dont-collect">
-      <div class="eyebrow"><span>02</span> What we don't collect</div>
+    <section class="clause" id="what-we-dont-collect">
+      <span class="clause__no" aria-hidden="true">2</span>
+      <div class="clause__body">
       <h2>No account, no analytics, no tracking</h2>
       <p>Varq does not ask you to create an account, and does not collect, transmit, or store your documents, notes, vault contents, or AI chat history anywhere outside your device.</p>
       <p>Varq contains no advertising software, no behavioural analytics, and no crash-reporting service. Nothing tracks which documents you open, what you write, what you ask the AI, or how you move around the app.</p>
       <p>There is one narrow exception, described in full under "Third-party services" below: Google's on-device text-recognition library, bundled in the app, sends small, anonymous technical diagnostics to Google. That data never includes your documents, notes, chats, file names, or anything you type, and it is not linked to you.</p>
       <p>If any of this changes, this policy will be updated first, and the change will be described in the app's release notes.</p>
+      </div>
     </section>
 
-    <section id="how-data-is-stored">
-      <div class="eyebrow"><span>03</span> Storage</div>
+    <section class="clause" id="how-data-is-stored">
+      <span class="clause__no" aria-hidden="true">3</span>
+      <div class="clause__body">
       <h2>How your data is stored</h2>
-      <p>Everything you create or import in Varq — documents, notes, chat history, search index — is stored in a local database on your device. Anything you add to the Vault is additionally encrypted at rest with <strong>AES-256-GCM</strong>, a strong, industry-standard authenticated encryption method.</p>
+      <p>Everything you create or import in Varq — documents, notes, chat history, search index — is stored in a local database on your device. Anything you add to the Vault is additionally encrypted at rest with <strong><span class="nb">AES-256-GCM</span></strong>, a strong, industry-standard authenticated encryption method.</p>
       <p>The encryption key is generated on your device and held in your device's secure, hardware-backed storage — never in the cloud. We keep no copy of your encryption key and have no way to decrypt your Vault, even if we wanted to.</p>
       <p>Details you choose to enter in your profile (such as your name and age) and the facts Varq's on-device AI remembers from your documents ("Memory Palace" and "Me") are stored the same way — locally, on your device only.</p>
+      </div>
     </section>
 
-    <section id="on-device-ai">
-      <div class="eyebrow"><span>04</span> Artificial intelligence</div>
-      <h2>On-device AI</h2>
+    <section class="clause" id="on-device-ai">
+      <span class="clause__no" aria-hidden="true">4</span>
+      <div class="clause__body">
+      <h2>On<span class="hy">-</span>device AI</h2>
       <p>Varq's AI features — chat, document analysis, semantic search, smart tagging, insights — run on a language model (Gemma, via Google's LiteRT runtime) that is downloaded once and then executes entirely on your device.</p>
       <p>When you ask the AI a question or open a document for analysis, none of that text, and none of the model's response, is sent to any server. The only network activity involved is the download of the model files themselves (see "Third-party services" below) — after that, your device does the thinking, offline if you like.</p>
       <p>AI-generated answers can be wrong or incomplete. Varq shows where an answer came from in your own documents where it can, but you should check anything important against the original.</p>
       <p>If an AI answer is offensive, harmful or wrong, you can report it from the answer itself. Varq opens your own email app with a message to us that contains the answer, the reason you picked, anything you add, and the app and model version. You can read and edit it first, and nothing is sent unless you press Send. Because the answer may quote your document, only send it if you are comfortable doing so.</p>
+      </div>
     </section>
 
-    <section id="permissions">
-      <div class="eyebrow"><span>05</span> Permissions</div>
+    <section class="clause" id="permissions">
+      <span class="clause__no" aria-hidden="true">5</span>
+      <div class="clause__body">
       <h2>Permissions we request, and why</h2>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>Permission</th><th>Why Varq asks for it</th></tr></thead>
-          <tbody>
-            <tr><td>Files &amp; media (older Android versions)</td><td>On older Android versions, to let you import documents and photos into your library and save exported or converted files back to your device. On current versions Varq uses Android's own file and photo pickers instead, so it only ever sees the files you choose.</td></tr>
-            <tr><td>Camera</td><td>Only used when you choose Scan to PDF, to show a live viewfinder that finds the edges of the page and captures it. The camera view and the pictures it takes are processed on your device and are never uploaded. If you don't grant it, you can still scan from photos you already have.</td></tr>
-            <tr><td>Microphone</td><td>Only used when you choose to record: a voice message to the AI assistant, or a voice note. Audio is processed on your device and is never uploaded.</td></tr>
-            <tr><td>Biometric / fingerprint</td><td>To unlock the app with your fingerprint or face instead of typing a PIN, if you turn on App Lock. Varq only receives a pass/fail result from Android — never your fingerprint or face data.</td></tr>
-            <tr><td>Notifications</td><td>To let you know when a background task — like indexing a large document, or a scheduled AI analysis — has finished.</td></tr>
-            <tr><td>Internet and network state</td><td>To download the on-device AI model files, and for the anonymous diagnostics described under "Third-party services". Never used to upload your content.</td></tr>
-            <tr><td>Background work (foreground service, keep-awake, start-on-boot)</td><td>So a long on-device task isn't stopped part-way: a background AI analysis of your documents (only if you turn it on, and only while charging) runs as a visible foreground service, the phone stays awake during a large model download, and scheduled analysis resumes after your phone restarts. This is processing on your own device, not syncing with any server.</td></tr>
+        <table role="table" aria-label="Permissions Varq requests">
+          <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Permission</th><th scope="col" role="columnheader">Why Varq asks for it</th></tr></thead>
+          <tbody role="rowgroup">
+            <tr role="row"><td role="cell">Files &amp; media (older Android versions)</td><td role="cell">On older Android versions, to let you import documents and photos into your library and save exported or converted files back to your device. On current versions Varq uses Android's own file and photo pickers instead, so it only ever sees the files you choose.</td></tr>
+            <tr role="row"><td role="cell">Camera</td><td role="cell">Only used when you choose Scan to PDF, to show a live viewfinder that finds the edges of the page and captures it. The camera view and the pictures it takes are processed on your device and are never uploaded. If you don't grant it, you can still scan from photos you already have.</td></tr>
+            <tr role="row"><td role="cell">Microphone</td><td role="cell">Only used when you choose to record: a voice message to the AI assistant, or a voice note. Audio is processed on your device and is never uploaded.</td></tr>
+            <tr role="row"><td role="cell">Biometric / fingerprint</td><td role="cell">To unlock the app with your fingerprint or face instead of typing a PIN, if you turn on App Lock. Varq only receives a pass/fail result from Android — never your fingerprint or face data.</td></tr>
+            <tr role="row"><td role="cell">Notifications</td><td role="cell">To let you know when a background task — like indexing a large document, or a scheduled AI analysis — has finished.</td></tr>
+            <tr role="row"><td role="cell">Internet and network state</td><td role="cell">To download the on-device AI model files, and for the anonymous diagnostics described under "Third-party services". Never used to upload your content.</td></tr>
+            <tr role="row"><td role="cell">Background work (foreground service, keep-awake, start-on-boot)</td><td role="cell">So a long on-device task isn't stopped part-way: a background AI analysis of your documents (only if you turn it on, and only while charging) runs as a visible foreground service, the phone stays awake during a large model download, and scheduled analysis resumes after your phone restarts. This is processing on your own device, not syncing with any server.</td></tr>
           </tbody>
         </table>
       </div>
       <p class="note">You can review or revoke any of these at any time in your device's Settings. Varq will simply ask again when needed, or fall back to a manual alternative (like a PIN instead of biometrics), if a permission isn't granted.</p>
+      </div>
     </section>
 
-    <section id="data-sharing">
-      <div class="eyebrow"><span>06</span> Sharing</div>
+    <section class="clause" id="data-sharing">
+      <span class="clause__no" aria-hidden="true">6</span>
+      <div class="clause__body">
       <h2>Data sharing</h2>
       <p>We don't sell, rent, or share your documents, notes, chats, or personal information with anyone — we can't, because we never receive them. Varq contains no advertising software and no data-broker integrations.</p>
       <p>The only information that leaves your device automatically is the anonymous technical diagnostics described under "Third-party services", which go to Google, and standard connection details that any download reveals to the server you download from.</p>
       <p>If you tap Share or Export, you are choosing to send that file or text to an app and recipient you pick through Android's share sheet. That is your action, and Varq doesn't see where it goes.</p>
       <p>The same is true when you report an AI answer or write to us: the message is sent by your own email app, and we receive only what is in that email, including your email address.</p>
+      </div>
     </section>
 
-    <section id="retention-deletion">
-      <div class="eyebrow"><span>07</span> Retention</div>
+    <section class="clause" id="retention-deletion">
+      <span class="clause__no" aria-hidden="true">7</span>
+      <div class="clause__body">
       <h2>Data retention &amp; deletion</h2>
       <p>You control retention entirely: delete a document, note, or Vault item at any time from within the app, and it's gone from your device. Settings also includes a panic action that destroys the Vault's encryption key, making Vault files permanently unreadable. Uninstalling Varq removes all of its local data along with it.</p>
       <p>The diagnostics described under "Third-party services" are anonymous and not tied to you or to any account, so there is nothing we can look up or delete on your behalf. Google keeps them under its own retention policy.</p>
       <p>If you email us, including to report an AI answer, we keep that email only as long as we need it to deal with your message, and we delete it sooner if you ask.</p>
       <p>Your Vault and app-lock credentials are deliberately excluded from your device's automatic cloud backup, so they won't reappear if you restore a device backup onto a new phone. Because everything lives only on your device, we strongly recommend keeping your own backups of anything important to you — if a device is lost, damaged, or reset, we have no copy to recover it from.</p>
+      </div>
     </section>
 
-    <section id="security">
-      <div class="eyebrow"><span>08</span> Security</div>
+    <section class="clause" id="security">
+      <span class="clause__no" aria-hidden="true">8</span>
+      <div class="clause__body">
       <h2>Security measures</h2>
-      <p>The Vault is encrypted with AES-256-GCM, an authenticated encryption standard that also protects against tampering, not just reading. App Lock uses biometric authentication and/or a PIN — your PIN is never stored in plain text; it's cryptographically hashed and salted (PBKDF2-SHA256) and protected against repeated guessing with an exponential lockout.</p>
+      <p>The Vault is encrypted with <span class="nb">AES-256-GCM</span>, an authenticated encryption standard that also protects against tampering, not just reading. App Lock uses biometric authentication and/or a PIN — your PIN is never stored in plain text; it's cryptographically hashed and salted (PBKDF2-SHA256) and protected against repeated guessing with an exponential lockout.</p>
       <p>Varq blocks screenshots and screen recording of the whole app at the operating-system level, and hides its content in the recent-apps view.</p>
       <p>Varq does not detect whether your device is rooted or modified. On a compromised device, other software may be able to read what an app displays or stores, so keep your device's own security up to date.</p>
+      </div>
     </section>
 
-    <section id="childrens-privacy">
-      <div class="eyebrow"><span>09</span> Children</div>
+    <section class="clause" id="childrens-privacy">
+      <span class="clause__no" aria-hidden="true">9</span>
+      <div class="clause__body">
       <h2>Children's privacy</h2>
       <p>Varq is not directed at children under 13, and we do not knowingly collect personal information from children — in practice, since the app collects no personal information from anyone, this is true by construction. Any age you enter in your profile stays on your device. If you believe a child has used the app in a way that concerns you, contact us using the details below.</p>
+      </div>
     </section>
 
-    <section id="your-rights">
-      <div class="eyebrow"><span>10</span> Your rights</div>
+    <section class="clause" id="your-rights">
+      <span class="clause__no" aria-hidden="true">10</span>
+      <div class="clause__body">
       <h2>Your rights &amp; choices</h2>
       <p>Many privacy laws (like the GDPR and CCPA) give you rights to access, correct, export, or delete your personal data. Because Varq never collects or stores your data anywhere but your own device, you already have complete, direct control over all of it — there's no request process, because there's no separate copy for us to act on. Opening the app and editing or deleting something <em>is</em> the whole process. The anonymous diagnostics in "Third-party services" aren't linked to you and can't be looked up by us, but if you have a question about them you can write to us below. If you have emailed us, you can ask us to delete that correspondence.</p>
       <p>If you are in the European Economic Area, the United Kingdom, or a US state with a privacy law, you also have the right to complain to your local data-protection authority. The anonymous diagnostics are processed by Google to keep the app working, which is a legitimate interest, and may be transferred internationally under Google's own safeguards.</p>
+      </div>
     </section>
 
-    <section id="third-parties">
-      <div class="eyebrow"><span>11</span> Third parties</div>
-      <h2>Third-party services</h2>
+    <section class="clause" id="third-parties">
+      <span class="clause__no" aria-hidden="true">11</span>
+      <div class="clause__body">
+      <h2>Third<span class="hy">-</span>party services</h2>
       <p>Varq has no server of its own. The app talks to the network for exactly two reasons, listed here in full.</p>
-
-      <h3>1. Downloading the AI model files — Hugging Face</h3>
+       <h3>1. Downloading the AI model files — Hugging Face</h3>
       <p>The first time you use the AI features (and again if you switch model builds or a model file is missing), Varq downloads the model files from Hugging Face's public hosting at huggingface.co. These are plain file downloads: the request contains no information about you, your documents, or your questions. Hugging Face, like any web server, can see standard connection information such as your IP address, under <a href="https://huggingface.co/privacy" rel="noopener">its own privacy policy</a>. After the download, the AI features run offline.</p>
-
-      <h3>2. Text recognition — Google ML Kit</h3>
+       <h3>2. Text recognition — Google ML Kit</h3>
       <p>When you scan a page or import an image, Varq reads the text with Google's ML Kit text-recognition library. The recognition models are built into the app and the image is processed entirely on your device — it is not sent to Google. Google states that the ML Kit SDK itself sends limited technical diagnostics to Google — device model and OS version, the app's package name and version, a per-installation identifier that is not intended to identify you or your device, performance figures (such as processing time) and error codes — over an encrypted connection, under <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">Google's ML Kit data disclosure</a>. It does not include the image or the text found in it.</p>
-
-      <h3>Google Play</h3>
+       <h3>Google Play</h3>
       <p>If you installed Varq from Google Play, Google separately collects installation, purchase and — if you have chosen to share diagnostic data with Google — crash and performance information (Android vitals) under its own privacy policy. Varq has no visibility into, or control over, that, and cannot see any of your content in it.</p>
-
-      <p class="note">We do not receive, store or have access to the diagnostics in (2); they go directly from the app to Google. We list them so nothing that leaves your device is a surprise.</p>
+       <p class="note">We do not receive, store or have access to the diagnostics in (2); they go directly from the app to Google. We list them so nothing that leaves your device is a surprise.</p>
+      </div>
     </section>
 
-    <section id="changes">
-      <div class="eyebrow"><span>12</span> Changes</div>
+    <section class="clause" id="changes">
+      <span class="clause__no" aria-hidden="true">12</span>
+      <div class="clause__body">
       <h2>Changes to this policy</h2>
       <p>If we make a meaningful change to how Varq handles data, we'll update this page and note the new effective date below. Since the app has no account or push channel tied to you personally, there's no way for it to notify you directly — we'd encourage checking back here occasionally, especially after an app update.</p>
+      </div>
     </section>
 
-    <section id="contact">
-      <div class="eyebrow"><span>13</span> Contact</div>
+    <section class="clause" id="contact">
+      <span class="clause__no" aria-hidden="true">13</span>
+      <div class="clause__body">
       <h2>Contact us</h2>
-      <div class="card contact-card">
-        <p style="max-width:44ch">Questions about this policy, or about how Varq works? Reach out any time.</p>
-        <a class="contact-btn" href="mailto:varqlabai@gmail.com">✉ varqlabai@gmail.com</a>
+      <div class="contact">
+        <p class="contact__text">Questions about this policy, or about how Varq works? Reach out any time.</p>
+        <p><a class="mail" href="mailto:varqlabai@gmail.com">varqlabai@gmail.com</a></p>
+        <button class="copy" type="button" data-copy="varqlabai@gmail.com" aria-label="Copy email address"><svg aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><span data-copy-label aria-hidden="true">Copy email address</span></button>
+        <span class="vh" role="status" data-copy-status></span>
       </div>
       <p class="note">Varq is developed independently by Rohit Tiwari.</p>
+      </div>
     </section>
-  </main>
+      </article>
+    </main>
+  </div>
 
-  <footer>
-    <span>Privacy Policy · Effective September 24, 2026</span>
-    <a href="about.html">About Varq →</a>
+  <footer class="foot">
+    <span>Privacy Policy, effective September 24, 2026</span>
+    <nav class="foot__links" aria-label="Pages">
+      <a href="terms.html">Terms of Use</a>
+      <a href="./">Home</a>
+    </nav>
   </footer>
 </div>
-<script>
-(function () {
-  var root = document.documentElement;
-  try {
-    var saved = localStorage.getItem('mb-theme');
-    if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
-  } catch (e) {}
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var dark = root.dataset.theme ? root.dataset.theme === 'dark'
-      : matchMedia('(prefers-color-scheme: dark)').matches;
-    var next = dark ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try { localStorage.setItem('mb-theme', next); } catch (e) {}
-  });
-})();
-</script>
+<script src="site/varq.js" defer></script>
 </body>
 </html>

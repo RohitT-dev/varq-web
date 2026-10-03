@@ -5,175 +5,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Use — Varq</title>
 <meta name="description" content="The terms for using Varq and its on-device AI, including the Gemma Terms of Use notice.">
-<style>
-/* ── Fonts (relative to web/ in the repo; graceful system-font fallback elsewhere) ── */
-@font-face { font-family:'Manrope'; src:url('assets/fonts/Manrope%5Bwght%5D.ttf') format('truetype-variations'); font-weight:200 800; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Medium.ttf') format('truetype'); font-weight:500; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-SemiBold.ttf') format('truetype'); font-weight:600; font-display:swap; }
-@font-face { font-family:'Inter'; src:url('assets/fonts/Inter-Bold.ttf') format('truetype'); font-weight:700; font-display:swap; }
-@font-face { font-family:'JetBrainsMono'; src:url('assets/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight:400; font-display:swap; }
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#edf1f6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#070e1b">
+<link rel="canonical" href="https://rohitt-dev.github.io/varq-web/terms.html">
 
-/* ── Page tokens — shared with docs/design-system.html ── */
-:root {
-  --bg:#F8F9FA; --surface:#FFFFFF; --surface-high:#F3F4F5; --surface-highest:#E7E8E9;
-  --ink:#1A1C1E; --muted:#44474A; --faint:#77797D; --hairline:#E0E0E0;
-  --accent:#1A1C1E; --on-accent:#FFFFFF; --gold-ink:#735C00; --teal:#1A9888;
-  --shadow-2:0 4px 20px rgba(0,0,0,.05);
-  --shadow-2h:0 6px 28px rgba(0,0,0,.08);
-  --font-display:'Manrope',-apple-system,'Segoe UI',system-ui,sans-serif;
-  --font-body:'Inter',-apple-system,'Segoe UI',Roboto,system-ui,sans-serif;
-  --font-mono:'JetBrainsMono',ui-monospace,'SF Mono','Cascadia Code',Menlo,monospace;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
-    --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
-    --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
-    --shadow-2:0 4px 20px rgba(0,0,0,.45);
-    --shadow-2h:0 6px 28px rgba(0,0,0,.55);
-  }
-}
-:root[data-theme="dark"] {
-  --bg:#121212; --surface:#1A1C1E; --surface-high:#25272A; --surface-highest:#2E3032;
-  --ink:#F0F1F2; --muted:#C5C6CA; --faint:#8A8D91; --hairline:#44474A;
-  --accent:#E2E2E5; --on-accent:#1A1C1E; --gold-ink:#FED65B; --teal:#44DDC1;
-  --shadow-2:0 4px 20px rgba(0,0,0,.45);
-  --shadow-2h:0 6px 28px rgba(0,0,0,.55);
-}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Varq">
+<meta property="og:title" content="Terms of Use — Varq">
+<meta property="og:description" content="The terms for using Varq and its on-device AI, including the Gemma Terms of Use notice.">
+<meta property="og:url" content="https://rohitt-dev.github.io/varq-web/terms.html">
+<meta property="og:image" content="https://rohitt-dev.github.io/varq-web/site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Varq: Nothing leaves the page.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Varq: Nothing leaves the page.">
 
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body {
-  font-family:var(--font-body); font-size:15.5px; line-height:1.65;
-  background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;
-}
-a { color:var(--teal); text-decoration:none; }
-a:hover { text-decoration:underline; }
-:focus-visible { outline:2px solid var(--gold-ink); outline-offset:2px; border-radius:4px; }
-strong { color:var(--ink); }
-
-.wrap { max-width:760px; margin:0 auto; padding:0 24px; }
-
-header.masthead { padding:48px 0 28px; border-bottom:1px solid var(--hairline); }
-.top-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-.brand { display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:.1px; }
-.brand-dot { width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 4px color-mix(in srgb, var(--teal) 16%, transparent); flex:none; }
-.top-nav { margin-left:auto; display:flex; align-items:center; gap:18px; font-size:13.5px; font-weight:600; }
-.top-nav a { color:var(--muted); }
-.top-nav a:hover { color:var(--ink); }
-.theme-toggle {
-  border:1px solid var(--hairline); background:var(--surface); color:var(--ink);
-  border-radius:9999px; padding:7px 14px; font:600 12px var(--font-body); letter-spacing:.02em;
-  cursor:pointer; box-shadow:var(--shadow-2);
-}
-.theme-toggle:hover { box-shadow:var(--shadow-2h); }
-
-h1 {
-  font-family:var(--font-display); font-weight:800; font-size:clamp(28px,5vw,38px);
-  letter-spacing:-.02em; line-height:1.15; margin-top:22px; text-wrap:balance;
-}
-.lede { color:var(--muted); font-size:16px; max-width:60ch; margin-top:12px; }
-
-.meta-chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:20px; }
-.meta-chip {
-  font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase;
-  border:1px solid var(--hairline); border-radius:9999px; padding:6px 13px; color:var(--muted);
-  background:var(--surface);
-}
-
-nav.toc {
-  margin:28px 0 6px; padding:18px 20px; border:1px solid var(--hairline); border-radius:16px;
-  background:var(--surface);
-}
-nav.toc .toc-label { font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); margin-bottom:10px; }
-nav.toc ol { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:4px 18px; counter-reset:toc; }
-nav.toc li { counter-increment:toc; font-size:13.5px; }
-nav.toc li::before { content:counter(toc, decimal-leading-zero); font-family:var(--font-mono); font-size:11px; color:var(--faint); margin-right:8px; }
-nav.toc a { color:var(--ink); font-weight:500; }
-nav.toc a:hover { color:var(--teal); }
-
-main { padding-bottom:8px; }
-section { padding:38px 0 0; scroll-margin-top:20px; }
-.eyebrow {
-  display:flex; align-items:center; gap:8px;
-  font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
-}
-.eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--teal); }
-h2 { font-family:var(--font-display); font-weight:800; font-size:21px; letter-spacing:-.01em; margin:8px 0 12px; }
-h3 { font-family:var(--font-display); font-weight:700; font-size:15.5px; margin:22px 0 6px; }
-section p, section li { color:var(--ink); }
-section p + p { margin-top:12px; }
-section .note { color:var(--muted); font-size:13.5px; margin-top:12px; }
-
-.card { background:var(--surface); border:1px solid var(--hairline); border-radius:20px; box-shadow:var(--shadow-2); padding:22px 24px; }
-
-.table-wrap { overflow-x:auto; border:1px solid var(--hairline); border-radius:14px; background:var(--surface); margin-top:4px; }
-table { border-collapse:collapse; width:100%; font-size:13.5px; }
-th, td { text-align:left; padding:12px 16px; border-top:1px solid var(--hairline); vertical-align:top; }
-thead th { border-top:none; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; background:var(--surface-high); }
-td:first-child { font-weight:600; white-space:nowrap; }
-
-.contact-card { display:flex; flex-wrap:wrap; align-items:center; gap:16px; justify-content:space-between; }
-.contact-btn {
-  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:var(--on-accent);
-  font-weight:700; font-size:14px; padding:11px 20px; border-radius:9999px; white-space:nowrap;
-}
-.contact-btn:hover { text-decoration:none; opacity:.92; }
-
-footer {
-  border-top:1px solid var(--hairline); margin-top:52px; padding:26px 0 56px;
-  font-size:13px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 22px;
-  justify-content:space-between; align-items:center;
-}
-footer a { font-weight:600; }
-
-@media print {
-  .theme-toggle, nav.toc { display:none; }
-  body { background:#fff; color:#000; }
-}
-</style>
+<link rel="icon" href="site/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="site/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="site/apple-touch-icon.png">
+<link rel="preload" href="site/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="site/fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site/varq.css">
+<script>
+(function(d){d.classList.add("js");try{var t=localStorage.getItem("varq-theme")||localStorage.getItem("mb-theme");if(t==="light"||t==="dark"){d.dataset.theme=t;var m=document.querySelectorAll('meta[name="theme-color"]');for(var i=0;i<m.length;i++){m[i].removeAttribute("media");m[i].setAttribute("content",t==="dark"?"#070e1b":"#edf1f6")}}}catch(e){}})(document.documentElement);
+</script>
 </head>
 <body>
-<div class="wrap">
-  <header class="masthead">
-    <div class="top-row">
-      <div class="brand"><span class="brand-dot" aria-hidden="true"></span>Varq</div>
-      <nav class="top-nav">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="about.html">About &amp; Contact</a>
-      </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle page theme">◐ Theme</button>
-    </div>
-    <h1>Terms of Use</h1>
-    <p class="lede">The rules for using Varq and its on-device AI, in plain language. The same text is in the app under Settings &gt; About &gt; Terms of use.</p>
-    <div class="meta-chips">
-      <span class="meta-chip">For adults 18+</span>
-      <span class="meta-chip">Your content stays yours</span>
-      <span class="meta-chip">Effective Sept 24, 2026</span>
-    </div>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="0 0 572 770">
+    <path d="M95 31H365L539 205V677A62 62 0 0 1 477 739H95A62 62 0 0 1 33 677V93A62 62 0 0 1 95 31Z" fill="none" stroke="currentColor" stroke-width="32" stroke-linejoin="round"/>
+    <path d="M358 31 540 213H410Q358 213 358 163Z" fill="currentColor"/>
+    <path d="M85 275H180L298 500 415 275H500L450 330 305 620 300 690Z" fill="currentColor"/>
+    <path d="M500 275 300 690 305 620 450 330Z" fill="#17E1E9"/>
+  </symbol>
+  <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="9" height="9" rx="2"/><path d="M4 12.5V5.5A1.5 1.5 0 0 1 5.5 4h7"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="frame">
+  <header class="bar">
+    <a class="brand" href="./" aria-label="Varq, home"><svg viewBox="0 0 572 770" aria-hidden="true" focusable="false"><use href="#mark"/></svg><span>Varq</span></a>
+    <nav class="nav" aria-label="Site">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html" aria-current="page">Terms</a>
+      <a href="./#contact" data-narrow="hide">Contact</a>
+      <button class="theme" id="themeToggle" type="button" aria-pressed="false" aria-label="Dark theme"><svg aria-hidden="true" focusable="false"><use href="#i-theme"/></svg></button>
+    </nav>
   </header>
 
-  <main>
-    <section id="who">
-      <div class="eyebrow"><span>01</span> Eligibility</div>
+  <div class="doc">
+    <nav class="rail" aria-label="Contents">
+      <details class="toc" open>
+        <summary>Contents<svg aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+        <ol role="list">
+          <li><a href="#who"><i>1</i><span>Who can use Varq</span></a></li>
+          <li><a href="#content"><i>2</i><span>Your content stays yours</span></a></li>
+          <li><a href="#ai"><i>3</i><span>The AI features</span></a></li>
+          <li><a href="#use"><i>4</i><span>Acceptable use</span></a></li>
+          <li><a href="#downloads"><i>5</i><span>Model downloads</span></a></li>
+          <li><a href="#warranty"><i>6</i><span>No warranty, and limits on liability</span></a></li>
+          <li><a href="#changes"><i>7</i><span>Changes to these terms</span></a></li>
+          <li><a href="#contact"><i>8</i><span>Contact us</span></a></li>
+        </ol>
+      </details>
+      <script>if(!matchMedia("(min-width:1160px)").matches)document.currentScript.previousElementSibling.removeAttribute("open")</script>
+    </nav>
+
+    <main id="main">
+      <article class="sheet paper" data-reading>
+        <span class="edge" aria-hidden="true"></span>
+        <header class="paper__head">
+          <h1>Terms of Use</h1>
+          <p class="paper__lede">The rules for using Varq and its on-device AI, in plain language. The same text is in the app under Settings &gt; About &gt; Terms of use.</p>
+          <p class="paper__date">Effective <time datetime="2026-09-29">September 29, 2026</time></p>
+          <ul class="assurances" role="list">
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>For adults 18+</span></li>
+          <li><svg aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Your content stays yours</span></li>
+          </ul>
+        </header>
+
+    <section class="clause" id="who">
+      <span class="clause__no" aria-hidden="true">1</span>
+      <div class="clause__body">
       <h2>Who can use Varq</h2>
       <p>These terms cover your use of Varq, the app. By using Varq you agree to them. If you don't agree, please don't use the app. Varq is for adults aged 18 and over.</p>
+      </div>
     </section>
 
-    <section id="content">
-      <div class="eyebrow"><span>02</span> Your content</div>
+    <section class="clause" id="content">
+      <span class="clause__no" aria-hidden="true">2</span>
+      <div class="clause__body">
       <h2>Your content stays yours</h2>
       <p>Your documents, notes, vault files and AI conversations belong to you. They are stored and processed on your device. Varq does not upload them, and we don't have a copy. The <a href="privacy-policy.html">Privacy Policy</a> has the details, including the few things that do leave your device.</p>
       <p>Because everything lives only on your device, you are responsible for keeping your own backups. If your phone is lost, reset or damaged, we cannot recover your data.</p>
+      </div>
     </section>
 
-    <section id="ai">
-      <div class="eyebrow"><span>03</span> Artificial intelligence</div>
+    <section class="clause" id="ai">
+      <span class="clause__no" aria-hidden="true">3</span>
+      <div class="clause__body">
       <h2>The AI features</h2>
       <p>Varq's assistant, summaries, search answers and other AI features are generated by a language model that runs on your device.</p>
-      <ul>
+      <ul role="list">
         <li><strong>AI can be wrong.</strong> Answers, summaries, dates and figures can be incomplete, out of date or simply incorrect. Check anything important against the original document.</li>
         <li><strong>It is not professional advice.</strong> Nothing the AI says is legal, medical, financial, tax or other professional advice.</li>
         <li><strong>You decide what to do with it.</strong> You are responsible for how you use what the AI produces.</li>
@@ -181,8 +121,8 @@ footer a { font-weight:600; }
       </ul>
       <h3>Gemma</h3>
       <p><strong>Gemma is provided under and subject to the Gemma Terms of Use found at <a href="https://ai.google.dev/gemma/terms" rel="noopener">ai.google.dev/gemma/terms</a>.</strong></p>
-      <p>The AI model in Varq is based on Google's Gemma. Your use of the AI features is also subject to the <a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms of Use</a> and the <a href="https://ai.google.dev/gemma/prohibited_use_policy" rel="noopener">Gemma Prohibited Use Policy</a>. In particular, you agree not to use Varq's AI features for anything that policy prohibits, including:</p>
-      <ul>
+      <p>The AI models in Varq (Varq 4 E2B and Varq 4 E4B) are Google's Gemma 4 models, and search uses Google's EmbeddingGemma. Your use of the AI features is also subject to the <a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms of Use</a> and the <a href="https://ai.google.dev/gemma/prohibited_use_policy" rel="noopener">Gemma Prohibited Use Policy</a>. In particular, you agree not to use Varq's AI features for anything that policy prohibits, including:</p>
+      <ul role="list">
         <li>anything illegal, or that facilitates illegal activity;</li>
         <li>content that exploits or harms children;</li>
         <li>harassment, abuse, threats, or promoting violence or hatred;</li>
@@ -190,64 +130,69 @@ footer a { font-weight:600; }
         <li>sexually explicit content;</li>
         <li>attempting to override or circumvent the model's safety behaviour.</li>
       </ul>
+      </div>
     </section>
 
-    <section id="use">
-      <div class="eyebrow"><span>04</span> Acceptable use</div>
+    <section class="clause" id="use">
+      <span class="clause__no" aria-hidden="true">4</span>
+      <div class="clause__body">
       <h2>Acceptable use</h2>
       <p>Only add documents you have the right to use. Don't use Varq to break the law or to infringe anyone else's rights, and don't try to reverse-engineer, tamper with or misuse the app.</p>
+      </div>
     </section>
 
-    <section id="downloads">
-      <div class="eyebrow"><span>05</span> Downloads</div>
+    <section class="clause" id="downloads">
+      <span class="clause__no" aria-hidden="true">5</span>
+      <div class="clause__body">
       <h2>Model downloads</h2>
       <p>The AI features need a one-time model download (about 2 to 3.7 GB, depending on your phone) from Hugging Face. Downloads can use a lot of data, so use Wi-Fi. Your carrier's charges are your responsibility.</p>
+      <h3>Purchases and refunds</h3>
+      <p>If you bought Varq on Google Play, the purchase and any refund are handled by Google Play under its own terms and refund policies. The on-device AI needs a phone with enough memory and free storage; Varq tells you before downloading a model this phone cannot run.</p>
+      </div>
     </section>
 
-    <section id="warranty">
-      <div class="eyebrow"><span>06</span> Warranty &amp; liability</div>
+    <section class="clause" id="warranty">
+      <span class="clause__no" aria-hidden="true">6</span>
+      <div class="clause__body">
       <h2>No warranty, and limits on liability</h2>
       <p>Varq is provided "as is". We work to make it reliable and secure, but we don't promise it will be free of errors, always available, or suitable for any particular purpose.</p>
       <p>To the extent the law allows, we are not liable for any indirect or consequential loss, or for loss of data, arising from your use of Varq. Nothing in these terms limits any rights you have under consumer law that cannot be limited.</p>
+      </div>
     </section>
 
-    <section id="changes">
-      <div class="eyebrow"><span>07</span> Changes</div>
+    <section class="clause" id="changes">
+      <span class="clause__no" aria-hidden="true">7</span>
+      <div class="clause__body">
       <h2>Changes to these terms</h2>
       <p>We may update these terms. The date at the top shows when they last changed, and continuing to use Varq after a change means you accept the new terms.</p>
+      </div>
     </section>
 
-    <section id="contact">
-      <div class="eyebrow"><span>08</span> Contact</div>
+    <section class="clause" id="contact">
+      <span class="clause__no" aria-hidden="true">8</span>
+      <div class="clause__body">
       <h2>Contact us</h2>
-      <div class="card contact-card">
-        <p style="max-width:44ch">Questions about these terms? Reach out any time.</p>
-        <a class="contact-btn" href="mailto:varqlabai@gmail.com">✉ varqlabai@gmail.com</a>
+      <div class="contact">
+        <p class="contact__text">Questions about these terms? Reach out any time.</p>
+        <p><a class="mail" href="mailto:varqlabai@gmail.com">varqlabai@gmail.com</a></p>
+        <button class="copy" type="button" data-copy="varqlabai@gmail.com" aria-label="Copy email address"><svg aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><span data-copy-label aria-hidden="true">Copy email address</span></button>
+        <span class="vh" role="status" data-copy-status></span>
       </div>
       <p class="note">Varq is developed independently by Rohit Tiwari.</p>
+      </div>
     </section>
-  </main>
+      </article>
+    </main>
+  </div>
 
-  <footer>
-    <span>Terms of Use · Effective September 24, 2026</span>
-    <a href="privacy-policy.html">Privacy Policy →</a>
+  <footer class="foot">
+    <span>Terms of Use, effective September 29, 2026</span>
+    <nav class="foot__links" aria-label="Pages">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="./">Home</a>
+    </nav>
   </footer>
 </div>
-<script>
-(function () {
-  var root = document.documentElement;
-  try {
-    var saved = localStorage.getItem('mb-theme');
-    if (saved === 'dark' || saved === 'light') root.dataset.theme = saved;
-  } catch (e) {}
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var dark = root.dataset.theme ? root.dataset.theme === 'dark'
-      : matchMedia('(prefers-color-scheme: dark)').matches;
-    var next = dark ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try { localStorage.setItem('mb-theme', next); } catch (e) {}
-  });
-})();
-</script>
+<script src="site/varq.js" defer></script>
 </body>
 </html>

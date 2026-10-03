@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 572 770" role="img" aria-label="Varq">
+  <style>
+    .ink { color: #0B2545; }
+    @media (prefers-color-scheme: dark) { .ink { color: #FFFFFF; } }
+  </style>
+  <g class="ink" fill="currentColor">
+    <path d="M95 31H365L539 205V677A62 62 0 0 1 477 739H95A62 62 0 0 1 33 677V93A62 62 0 0 1 95 31Z" fill="none" stroke="currentColor" stroke-width="32" stroke-linejoin="round"/>
+    <path d="M358 31 540 213H410Q358 213 358 163Z"/>
+    <path d="M85 275H180L298 500 415 275H500L450 330 305 620 300 690Z"/>
+  </g>
+  <path fill="#17E1E9" d="M500 275 300 690 305 620 450 330Z"/>
+</svg>
